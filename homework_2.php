@@ -12,10 +12,17 @@ $arr=array();
 $i=0;
 function is_prime($temp)
 {
-	if($temp!= 2 && $temp%2==0 || $temp% 3==0  && $temp!= 3 )
-	return false;
-	else
-	return true;		 
+	$dev=2;
+	 $maxdec=sqrt($temp);
+	 $prime=true;
+	 while($prime && ($dev<=$maxdec)){
+	if($temp % $dev==0)
+		{
+	$prime=false;
+		}
+	$dev++;
+	 }		
+return $prime;				 
 }
 
 function find_3_prime($tmp){
@@ -51,10 +58,12 @@ function check_exists($tmp)
 	}
 }
 
-foreach (range(0, 1000, 37) as $number) {
+foreach (range(20, 1000, 37) as $number) {
 	$arr[$i]=$number;
 	$i++;
 }
+find_3_prime($arr);
+echo"</br>";
 check_exists($arr);
 ?>
 </body>
