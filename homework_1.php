@@ -27,6 +27,8 @@ else{
 				{
 				echo "<p style=\"color:red\">The parameter is not within the range [0,19999]</p>";
 				}
+				else
+				{
 				 $dev=2;
 				 $maxdec=sqrt($number);
 				 $prime=true;
@@ -36,8 +38,7 @@ else{
 					$prime=false;
 					}
 					$dev++;
-				 }
-				 
+					}
 				 if( $prime==false){
 				 
 				 echo "<p style=\"color:blue\">The number ".$number." is NOT prime !</p>";
@@ -45,6 +46,7 @@ else{
 				 else
 				 {
 				 echo "<p style=\"color:red\">The number".$number." is prime !</p>";
+			 }
 			 }
 		}
 		else
