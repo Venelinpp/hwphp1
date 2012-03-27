@@ -23,12 +23,23 @@ else{
 	$number=$_GET["text"];
 	if( is_numeric($number)==true)
 		{
-				if($number <=0 && $number>=1999)
+				if($number <=0 || $number>=1999)
 				{
 				echo "<p style=\"color:red\">The parameter is not within the range [0,19999]</p>";
 				}
-				 if($number!= 2 && $number%2==0 || $number% 3==0  && $number!= 3 )
-				 {
+				 $dev=2;
+				 $maxdec=sqrt($number);
+				 $prime=true;
+				 while($prime && ($dev<=$maxdec)){
+					if($number % $dev==0)
+					{
+					$prime=false;
+					}
+					$dev++;
+				 }
+				 
+				 if( $prime==false){
+				 
 				 echo "<p style=\"color:blue\">The number ".$number." is NOT prime !</p>";
 				 }
 				 else
